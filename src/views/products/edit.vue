@@ -164,7 +164,7 @@ const updateProduct = async () => {
                 </router-link>
                 <button
                   type="submit"
-                  class="btn btn-md btn-primary rounded-5 shadow border-0"
+                  class="btn btn-md btn-primary rounded-3 shadow border-0"
                 >
                   Update
                 </button>

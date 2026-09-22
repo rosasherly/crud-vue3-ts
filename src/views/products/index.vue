@@ -27,16 +27,16 @@ onMounted(() => {
 });
 
 const deleteProduct = async (id: number) => {
-  try {
-    await Api.delete(`/api/products/${id}`);
-
-    fetchDataProducts();
-  } catch (error) {
-    console.error("Error deleting product:", error);
+  if (confirm("Apakah Anda yakin ingin menghapus produk ini?")) {
+    try {
+      await Api.delete(`/api/products/${id}`);
+      products.value = products.value.filter((product) => product.id !== id);
+    } catch (error) {
+      console.error("Error deleting category:", error);
+    }
   }
 };
 </script>
-
 <template>
   <div class="container mt-5 mb-5">
     <div class="row">
@@ -47,7 +47,7 @@ const deleteProduct = async (id: number) => {
         >
           ADD NEW PRODUCT
         </router-link>
-        <div class="card border-0 rounded-3 shadow">
+        <div class="card border-0 rounded-5 shadow">
           <div class="card-body">
             <table class="table table-bordered">
               <thead class="bg-dark text-white text-center">
@@ -62,7 +62,7 @@ const deleteProduct = async (id: number) => {
               </thead>
               <tbody>
                 <tr v-if="products.length === 0">
-                  <td colspan="5" class="text-center">
+                  <td colspan="6" class="text-center">
                     <div class="alert alert-danger mb-0">No Data Available</div>
                   </td>
                 </tr>

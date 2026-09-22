@@ -60,7 +60,6 @@ const storeProduct = async () => {
   }
 };
 </script>
-
 <template>
   <div class="container mt-5">
     <div class="row">
@@ -151,7 +150,7 @@ const storeProduct = async () => {
                 </router-link>
                 <button
                   type="submit"
-                  class="btn btn-md btn-primary rounded-4 shadow border-0"
+                  class="btn btn-md btn-primary rounded-3 shadow border-0"
                 >
                   Save
                 </button>
