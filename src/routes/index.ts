@@ -25,6 +25,22 @@ const routes: Array<RouteRecordRaw> = [
         name: 'products-edit',
         component: () => import('../views/products/edit.vue')
     },
+
+    {
+        path: '/categories',
+        name: 'categories',
+        component: () => import('../views/categories/index.vue')
+    },
+    {
+        path: '/categories/create',
+        name: 'categories-create',
+        component: () => import('../views/categories/create.vue')
+    },
+    {
+        path: '/categories/edit/:id',
+        name: 'categories-edit',
+        component: () => import('../views/categories/edit.vue')
+    },
 ];
 
 const router = createRouter({
